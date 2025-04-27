@@ -1,0 +1,31 @@
+.product-page {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  &__variants {
+    display: flex;
+    gap: 1rem;
+  }
+
+  &__variants-item {
+    padding: 0.5rem;
+    border: 2px solid var(--color-text-primary);
+    border-radius: 4px;
+
+    &:hover {
+      cursor: pointer;
+      box-shadow: 0 0 10px var(--color-primary);
+      border-color: var(--color-primary);
+    }
+  }
+
+  &__add-to-cart-btn {
+    margin-left: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .product-page__variants-item:hover {
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+}

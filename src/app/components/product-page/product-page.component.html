@@ -1,0 +1,39 @@
+<main class="product-page">
+  <img
+    ngSrc="assets/variants/t-shirt-white.svg"
+    alt="T-shirt"
+    width="589"
+    height="640"
+    priority
+  />
+  <section class="product-page__content">
+    <h2 class="product-page__title">Spring Limited Edition T-shirt</h2>
+    <div class="product-page__variants">
+      @for (variant of variants; track variant.id) {
+      <img
+        class="product-page__variants-item"
+        [ngSrc]="variant.imageSrc"
+        [attr.aria-label]="variant.name"
+        width="59"
+        height="64"
+      />
+      }
+    </div>
+    <div class="product-page__price">
+      <span class="product-page__price--discounted">$19.99</span>
+      <span class="product-page__price--discount">50%</span>
+      <small class="product-page__price--original">$39.99</small>
+    </div>
+    <button class="product-page__quantity-btn" type="button">
+      <img ngSrc="assets/icons/icon-minus.svg" width="12" height="4" />
+    </button>
+    <input type="number" class="product-page__quantity" value="1" min="1" />
+    <button class="product-page__quantity-btn" type="button">
+      <img ngSrc="assets/icons/icon-plus.svg" width="12" height="12" />
+    </button>
+    <button class="product-page__add-to-cart-btn" type="button">
+      <img ngSrc="assets/icons/icon-cart.svg" width="16" height="16" />
+      Add to cart
+    </button>
+  </section>
+</main>

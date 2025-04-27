@@ -1,1 +1,33 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap");
+
+:root {
+  --color-primary: hsl(210, 22%, 49%);
+  --color-primary-background: hsl(210, 36%, 96%);
+
+  --color-accent: hsl(26, 100%, 55%);
+  --color-accent-light: hsl(25, 100%, 94%);
+
+  --color-text-primary: hsl(220, 13%, 13%);
+  --color-text-secondary: hsl(219, 9%, 45%);
+  --color-border: hsl(220, 14%, 75%);
+  --color-background: hsl(223, 64%, 98%);
+  --color-surface: hsl(0, 0%, 100%);
+  --color-overlay: hsla(0, 0%, 0%, 0.75);
+
+  --font-family: "Kumbh Sans", sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+  --font-size-body: 16px;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
