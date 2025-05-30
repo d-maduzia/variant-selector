@@ -1,0 +1,13 @@
+<div class="variant-selector">
+  @for (variant of variants(); track variant.id) {
+  <img
+    class="variant-selector__image"
+    [class.variant-selector__image--active]="variant.id === activeVariant()?.id"
+    [ngSrc]="variant.imageSrc"
+    alt="{{ variant.name }} T-Shirt"
+    width="74"
+    height="80"
+    (click)="variantSelected.emit(variant)"
+  />
+  }
+</div>
