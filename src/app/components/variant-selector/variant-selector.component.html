@@ -1,13 +1,24 @@
-<div class="variant-selector">
+<div class="variant-selector" aria-label="Select a variant" role="radiogroup">
   @for (variant of variants(); track variant.id) {
-  <img
-    class="variant-selector__image"
-    [class.variant-selector__image--active]="variant.id === activeVariant()?.id"
-    [ngSrc]="variant.imageSrc"
-    alt="{{ variant.name }} T-Shirt"
-    width="74"
-    height="80"
-    (click)="variantSelected.emit(variant)"
-  />
+  <label
+    class="variant-selector__item-container"
+    [attr.aria-label]="variant.name"
+  >
+    <img
+      class="variant-selector__image"
+      [ngSrc]="variant.imageSrc"
+      width="74"
+      height="80"
+      alt="{{ variant.name }} T-Shirt"
+    />
+    <input
+      class="cdk-visually-hidden"
+      type="radio"
+      name="variant"
+      [value]="variant.id"
+      [checked]="variant.id === activeVariant()?.id"
+      (change)="variantSelected.emit(variant)"
+    />
+  </label>
   }
 </div>

@@ -13,8 +13,4 @@ export class VariantSelectorComponent {
   readonly activeVariant = input<Variant>();
 
   readonly variantSelected = output<Variant>();
-
-  onClick(variant: Variant) {
-    this.variantSelected.emit(variant);
-  }
 }
