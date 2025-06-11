@@ -1,0 +1,23 @@
+.variant-selector {
+  &__tiles-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  &__selected-color {
+    margin-bottom: 0.5rem;
+  }
+
+  &__image {
+    position: relative;
+    padding: 0.5rem;
+    outline: 1px solid var(--color-border);
+    border-radius: 4px;
+    cursor: pointer;
+
+    &--active {
+      outline: 2px solid var(--color-highlight);
+    }
+  }
+}

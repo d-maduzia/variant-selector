@@ -1,23 +1,39 @@
 @import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap");
 
 :root {
-  --color-primary: hsl(210, 22%, 49%);
-  --color-primary-background: hsl(210, 36%, 96%);
+  --color-primary: hsl(26, 100%, 55%);
+  --color-background: hsl(223, 64%, 98%);
 
-  --color-accent: hsl(26, 100%, 55%);
-  --color-accent-light: hsl(25, 100%, 94%);
+  --color-highlight: hsl(216, 94%, 67%);
 
   --color-text-primary: hsl(220, 13%, 13%);
   --color-text-secondary: hsl(219, 9%, 45%);
+
   --color-border: hsl(220, 14%, 75%);
-  --color-background: hsl(223, 64%, 98%);
-  --color-surface: hsl(0, 0%, 100%);
-  --color-overlay: hsla(0, 0%, 0%, 0.75);
+  --color-surface: hsl(210, 36%, 93%);
 
   --font-family: "Kumbh Sans", sans-serif;
   --font-weight-regular: 400;
   --font-weight-bold: 700;
-  --font-size-body: 16px;
+
+  --font-2xl: 2.2rem;
+  --font-xl: 2rem;
+  --font-lg: 1.5rem;
+  --font-md: 1.1rem;
+  --font-sm: 0.9rem;
+
+  --sm-padding-x: 1rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  color: var(--color-text-primary);
+  font-family: var(--font-family);
+  background-color: var(--color-background);
+  margin: 0;
 }
 
 /* Chrome, Safari, Edge, Opera */
@@ -30,4 +46,70 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type="number"] {
   -moz-appearance: textfield;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+input {
+  border: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+button {
+  all: unset; /* Resets most inherited and default styles */
+  display: inline-block; /* Ensures the button behaves like a block-level element */
+  cursor: pointer; /* Adds the pointer cursor for interactivity */
+  outline: revert; /* Restores the default focus outline for accessibility */
+}
+
+.container {
+  padding-inline: var(--sm-padding-x);
+  margin-inline: auto;
+}
+
+@media (width >= 40rem) {
+  .container {
+    --sm-padding-x: 0;
+    max-width: 37rem;
+  }
+  .timeline::after {
+    inset: auto;
+  }
+}
+
+@media (width >= 48rem) {
+  .container {
+    max-width: 45rem;
+  }
+}
+
+@media (width >= 64rem) {
+  .container {
+    max-width: 60rem;
+  }
 }

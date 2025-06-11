@@ -1,31 +1,112 @@
 .product-page {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  place-items: center;
+  padding-block: 3rem;
 
-  &__variants {
-    display: flex;
-    gap: 1rem;
+  &__subtitle {
+    font-size: var(--font-sm);
+    font-weight: var(--font-weight-bold);
+    letter-spacing: 0.1ch;
+    color: var(--color-text-secondary);
+    margin-bottom: 0.5rem;
   }
 
-  &__variants-item {
-    padding: 0.5rem;
-    border: 2px solid var(--color-text-primary);
-    border-radius: 4px;
+  &__title {
+    font-size: var(--font-2xl);
+    margin-bottom: 0.5em;
+  }
 
-    &:hover {
-      cursor: pointer;
-      box-shadow: 0 0 10px var(--color-primary);
-      border-color: var(--color-primary);
+  &__selected-variant {
+    margin-bottom: 0.5em;
+  }
+
+  &__price {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    justify-content: start;
+    align-items: end;
+    column-gap: 1rem;
+    row-gap: 0.5rem;
+    font-size: var(--font-sm);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: 1rem;
+
+    &-current {
+      font-size: var(--font-lg);
+    }
+
+    &-discount {
+      color: var(--color-background);
+      background: var(--color-text-primary);
+      padding: 0.2rem 0.5rem;
+      border-radius: 6px;
+    }
+
+    &-original {
+      color: var(--color-text-secondary);
     }
   }
 
+  &__cta {
+    display: flex;
+    height: 3rem;
+    gap: 1px;
+  }
+
+  &__quantity-btn,
+  &__quantity-input,
   &__add-to-cart-btn {
+    display: grid;
+    place-items: center;
+    font-weight: var(--font-weight-bold);
+  }
+
+  &__quantity-btn,
+  &__quantity-input {
+    background-color: var(--color-surface);
+  }
+
+  &__quantity-btn {
+    width: 2rem;
+  }
+
+  &__quantity-input {
+    width: 4rem;
+  }
+
+  &__quantity-btn--decrement {
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+  }
+
+  &__quantity-btn--increment {
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+  }
+
+  &__add-to-cart-btn {
+    grid-template-columns: repeat(2, auto);
+    gap: 0.75rem;
+    font-size: var(--font-sm);
+    padding-inline: 2rem;
     margin-left: 1rem;
+    background-color: var(--color-primary);
+    border-radius: 6px;
+  }
+
+  &__add-to-cart-icon {
+    filter: brightness(0.3);
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .product-page__variants-item:hover {
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+@media (min-width: 48rem) {
+  .product-page {
+    grid-template-columns: 1fr 1.5fr;
+    padding-block: 6rem;
+
+    &__add-to-cart-btn {
+      padding-inline: 3rem;
+    }
   }
 }

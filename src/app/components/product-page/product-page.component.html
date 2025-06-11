@@ -1,39 +1,57 @@
-<main class="product-page">
+<main class="product-page container">
   <img
-    ngSrc="assets/variants/t-shirt-white.svg"
+    [ngSrc]="activeVariant().imageSrc"
+    [attr.aria-label]="activeVariant().name + ' T-Shirt'"
     alt="T-shirt"
-    width="589"
-    height="640"
+    width="300"
+    height="326"
     priority
   />
-  <section class="product-page__content">
-    <h2 class="product-page__title">Spring Limited Edition T-shirt</h2>
-    <div class="product-page__variants">
-      @for (variant of variants; track variant.id) {
-      <img
-        class="product-page__variants-item"
-        [ngSrc]="variant.imageSrc"
-        [attr.aria-label]="variant.name"
-        width="59"
-        height="64"
-      />
-      }
-    </div>
+  <section class="product-page__content" aria-labelledby="page-title">
+    <div class="product-page__subtitle">T-SHIRT COMPANY</div>
+    <h1 id="page-title" class="product-page__title">
+      Summer Limited Edition T-Shirt
+    </h1>
+    <app-variant-selector
+      [variants]="variants"
+      [activeVariant]="activeVariant()"
+      (variantSelected)="onVariantSelected($event)"
+    />
     <div class="product-page__price">
-      <span class="product-page__price--discounted">$19.99</span>
-      <span class="product-page__price--discount">50%</span>
-      <small class="product-page__price--original">$39.99</small>
+      <span class="product-page__price-current">$19.99</span>
+      <span class="product-page__price-discount">50%</span>
+      <del class="product-page__price-original">$39.99</del>
     </div>
-    <button class="product-page__quantity-btn" type="button">
-      <img ngSrc="assets/icons/icon-minus.svg" width="12" height="4" />
-    </button>
-    <input type="number" class="product-page__quantity" value="1" min="1" />
-    <button class="product-page__quantity-btn" type="button">
-      <img ngSrc="assets/icons/icon-plus.svg" width="12" height="12" />
-    </button>
-    <button class="product-page__add-to-cart-btn" type="button">
-      <img ngSrc="assets/icons/icon-cart.svg" width="16" height="16" />
-      Add to cart
-    </button>
+    <div class="product-page__cta">
+      <button
+        class="product-page__quantity-btn product-page__quantity-btn--decrement"
+        type="button"
+        (click)="updateQuantity(-1)"
+      >
+        <img ngSrc="assets/icons/icon-minus.svg" width="12" height="4" />
+      </button>
+      <input
+        [(ngModel)]="quantity"
+        type="number"
+        class="product-page__quantity-input"
+        min="1"
+      />
+      <button
+        class="product-page__quantity-btn product-page__quantity-btn--increment"
+        type="button"
+        (click)="updateQuantity(1)"
+      >
+        <img ngSrc="assets/icons/icon-plus.svg" width="12" height="12" />
+      </button>
+      <button class="product-page__add-to-cart-btn" type="button">
+        <img
+          class="product-page__add-to-cart-icon"
+          ngSrc="assets/icons/icon-cart.svg"
+          width="16"
+          height="16"
+        />
+        <span class="product-page__add-to-cart-label">Add to cart </span>
+      </button>
+    </div>
   </section>
 </main>
