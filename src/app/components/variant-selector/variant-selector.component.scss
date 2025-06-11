@@ -1,3 +1,7 @@
+@use "@angular/cdk";
+
+@include cdk.a11y-visually-hidden;
+
 .variant-selector {
   &__tiles-container {
     display: flex;
@@ -15,9 +19,13 @@
     outline: 1px solid var(--color-border);
     border-radius: 4px;
     cursor: pointer;
+  }
 
-    &--active {
-      outline: 2px solid var(--color-highlight);
-    }
+  input[type="radio"]:checked + &__image {
+    outline: 2px solid var(--color-highlight);
+  }
+
+  input[type="radio"]:focus + &__image {
+    outline: 3px solid black;
   }
 }

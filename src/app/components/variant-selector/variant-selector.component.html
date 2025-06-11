@@ -1,18 +1,29 @@
-<div class="variant-selector__selected-color">
-  Selected color: @if (activeVariant()?.name) {
-  <strong>{{ activeVariant()!.name }}</strong>
-  }
-</div>
-<div class="variant-selector__tiles-container">
-  @for (variant of variants(); track variant.id) {
-  <img
-    class="variant-selector__image"
-    [class.variant-selector__image--active]="variant.id === activeVariant()?.id"
-    [ngSrc]="variant.thumbnailSrc"
-    alt="{{ variant.name }} T-Shirt"
-    width="74"
-    height="80"
-    (click)="variantSelected.emit(variant)"
-  />
-  }
-</div>
+<fieldset role="radiogroup">
+  <legend class="variant-selector__selected-color">
+    Selected color: @if (activeVariant()?.name) {
+    <strong>{{ activeVariant()!.name }}</strong>
+    }
+  </legend>
+  <div class="variant-selector__tiles-container">
+    @for (variant of variants(); track variant.id) {
+    <label>
+      <input
+        [attr.aria-label]="variant?.name"
+        class="cdk-visually-hidden"
+        type="radio"
+        name="variant"
+        [value]="variant.id"
+        [checked]="variant.id === activeVariant()?.id"
+        (change)="variantSelected.emit(variant)"
+      />
+      <img
+        class="variant-selector__image"
+        [ngSrc]="variant.thumbnailSrc"
+        alt="{{ variant.name }} T-Shirt"
+        width="74"
+        height="80"
+      />
+    </label>
+    }
+  </div>
+</fieldset>
