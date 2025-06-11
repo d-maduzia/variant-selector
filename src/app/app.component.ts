@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { HeaderComponent } from './components/header/header.component';
 import { ProductPageComponent } from './components/product-page/product-page.component';
 
@@ -7,6 +7,7 @@ import { ProductPageComponent } from './components/product-page/product-page.com
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
   imports: [HeaderComponent, ProductPageComponent],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
   title = 'product-page';

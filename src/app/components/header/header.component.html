@@ -1,12 +1,20 @@
-<header>
-  <h1>apparel</h1>
-  <ul>
-    <li><a href="#">Collections</a></li>
-    <li><a href="#">Men</a></li>
-    <li><a href="#">Women</a></li>
-    <li><a href="#">About</a></li>
-    <li><a href="#">Contact</a></li>
-  </ul>
-  <img ngSrc="/assets/icons/icon-cart.svg" height="32" width="32" />
-  <img ngSrc="/assets/image-avatar.png" height="32" width="32" />
+<header class="page-header container">
+  <nav class="page-header__nav">
+    <a class="page-header__home-link" href="#">apparel</a>
+    <ul class="page-header__nav-list">
+      <li><a class="page-header__nav-link" href="#">Collections</a></li>
+      <li><a class="page-header__nav-link" href="#">Men</a></li>
+      <li><a class="page-header__nav-link" href="#">Women</a></li>
+      <li><a class="page-header__nav-link" href="#">About</a></li>
+      <li><a class="page-header__nav-link" href="#">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="page-header__cta-container">
+    <button type="button" aria-label="Show cart">
+      <img ngSrc="/assets/icons/icon-cart.svg" height="20" width="20" />
+    </button>
+    <button type="button" aria-label="Show user menu">
+      <img ngSrc="/assets/image-avatar.png" height="48" width="48" />
+    </button>
+  </div>
 </header>

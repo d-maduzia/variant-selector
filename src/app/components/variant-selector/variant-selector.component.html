@@ -1,0 +1,18 @@
+<div class="variant-selector__selected-color">
+  Selected color: @if (activeVariant()?.name) {
+  <strong>{{ activeVariant()!.name }}</strong>
+  }
+</div>
+<div class="variant-selector__tiles-container">
+  @for (variant of variants(); track variant.id) {
+  <img
+    class="variant-selector__image"
+    [class.variant-selector__image--active]="variant.id === activeVariant()?.id"
+    [ngSrc]="variant.thumbnailSrc"
+    alt="{{ variant.name }} T-Shirt"
+    width="74"
+    height="80"
+    (click)="variantSelected.emit(variant)"
+  />
+  }
+</div>
