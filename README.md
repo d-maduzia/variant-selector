@@ -1,6 +1,14 @@
 # ProductPage
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.9.
+VariantSelector is a sample e-commerce product page built with Angular 20. It demonstrates a responsive UI for selecting product variants, adjusting quantities, and adding items to a cart.
+
+**Attribution:**
+
+> The UI design for this project is based on the [Frontend Mentor eCommerce Product Page challenge](https://www.frontendmentor.io/solutions/ecommerce-product-page-z_I-TRCSk).
+>
+> T-shirt images are sourced from [Pixabay](https://pixabay.com/) and are licensed under the Pixabay Content License.
+
+The project emphasizes accessibility, featuring semantic markup and full keyboard navigation. It was used as a demo during the Case Study: Building An Accessible Product Variant selector talk on Angular Spring Camp hosted by [angular.love](https://angular.love), showcasing practical approaches to building accessible Angular interfaces.
 
 ## Development server
 
@@ -12,48 +20,15 @@ ng serve
 
 Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
-## Code scaffolding
+## Accessibility Learning Resources
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+If you're interested in diving deeper into web accessibility, here are some recommended resources:
 
-```bash
-ng generate component component-name
-```
+- [MDN Web Docs: Accessibility](https://developer.mozilla.org/en-US/docs/Web/Accessibility)  
+  Guides and best practices for making web content accessible to everyone.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+- [WAI-ARIA Authoring Practices](https://www.w3.org/WAI/ARIA/apg/)  
+  Practical patterns and examples for building accessible UI components.
 
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- [ The Only Accessibility Video You Will Ever Need ](https://www.youtube.com/watch?v=2oiBKSjOOFE)  
+  For those of you that prefer video content.
