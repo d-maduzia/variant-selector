@@ -8,7 +8,7 @@ VariantSelector is a sample e-commerce product page built with Angular 20. It de
 >
 > T-shirt images are sourced from [Pixabay](https://pixabay.com/) and are licensed under the Pixabay Content License.
 
-The project emphasizes accessibility, featuring semantic markup and full keyboard navigation. It was used as a demo during the Case Study: Building An Accessible Product Variant selector talk on Angular Spring Camp hosted by [angular.love](https://angular.love), showcasing practical approaches to building accessible Angular interfaces.
+The project emphasizes accessibility, featuring semantic markup and full keyboard navigation. It was used as a demo during the Case Study: Building An Accessible Product Variant selector talk on Angular Spring Camp hosted by [angular.love](https://angular.love), showcasing practical approaches to building accessible Angular interfaces: https://www.youtube.com/watch?v=JcYjZoUAT0k&t=2966s.
 
 ## Development server
 
